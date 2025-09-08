@@ -46,5 +46,5 @@ The app demonstrates **Flutter Bloc** for state management, location-based weath
 
 ### 2. Clone the Repository
 ```bash
-git clone https://github.com/your-username/taskcast_app.git
+git clone https://github.com/Rafay-kz/TaskCast.git
 cd taskcast_app
