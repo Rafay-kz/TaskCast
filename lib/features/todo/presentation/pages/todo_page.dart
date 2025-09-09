@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:task_cast_app/core/theme/app_theme.dart';
+import '../../../../common/widgets/custom_primary_button.dart';
 import '../../../../core/constants/app_constants.dart';
 import '../../domain/entities/todo.dart';
 import '../bloc/todo_bloc.dart';
@@ -47,8 +48,9 @@ class _TodoPageState extends State<TodoPage> {
               onPressed: () => Navigator.pop(context),
               child: const Text(AppStrings.cancel),
             ),
-            ElevatedButton(
-              onPressed: () {
+            CustomPrimaryButton(
+              width: 100,
+              onButtonPressed: () {
                 final todo = Todo(
                   id: DateTime.now().millisecondsSinceEpoch.toString(),
                   title: titleController.text,
@@ -59,7 +61,7 @@ class _TodoPageState extends State<TodoPage> {
                 context.read<TodoBloc>().add(AddTodo(todo: todo));
                 Navigator.pop(context);
               },
-              child: const Text(AppStrings.save),
+              title: AppStrings.save,
             ),
           ],
         );
