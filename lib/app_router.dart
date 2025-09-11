@@ -1,25 +1,23 @@
 import 'package:flutter/material.dart';
+import 'package:task_cast_app/features/authentication/presentation/pages/splash_page.dart';
 import 'dashboard.dart';
 import 'features/authentication/presentation/pages/login_page.dart';
 
 class AppRouter {
-  static const String loginRoute = '/';
+  static const String splashRoute = '/';
+  static const String loginRoute = '/login';
   static const String dashboardRoute = '/dashboard';
 
   static Route<dynamic> generateRoute(RouteSettings settings) {
     switch (settings.name) {
+      case splashRoute:
+        return _createRoute(const SplashPage());
       case loginRoute:
         return _createRoute(const LoginPage());
       case dashboardRoute:
         return _createRoute(const DashboardPage());
       default:
-        return _createRoute(
-          Scaffold(
-            body: Center(
-              child: Text('No route defined for ${settings.name}'),
-            ),
-          ),
-        );
+        return _createRoute(const SplashPage());
     }
   }
 
